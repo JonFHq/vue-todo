@@ -38,3 +38,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## App Info
+
+This app is a very simple todo app where you can add a task and remove it as you do it.
+
+For example see ![Alt text](public/mainApp.png)
