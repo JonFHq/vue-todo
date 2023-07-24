@@ -46,32 +46,29 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <form v-on:submit="submit">
-            <input type="text" v-model="task" placeholder="Enter your todo" />
-            <div>
-                <button :disabled="task == ''" type="submit">{{ taskButton }}</button>
-                <button :disabled="task == ''" type="reset" v-on:click="cancel" >Cancel</button>
-            </div>
-        </form>
-        <todo-list v-bind:items="items" v-on:deleteTask="deleteTask" v-on:editTask="editTask" />
-    </div>
+    <form v-on:submit="submit">
+        <input type="text" v-model="task" placeholder="Enter your todo" />
+        <div>
+            <button :disabled="task == ''" type="submit">{{ taskButton }}</button>
+            <button :disabled="task == ''" type="reset" v-on:click="cancel">Cancel</button>
+        </div>
+    </form>
+    <todo-list v-bind:items="items" v-on:deleteTask="deleteTask" v-on:editTask="editTask" />
 </template>
 
 <style scoped>
-li {
-    list-style: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
 }
 
 input {
-    margin-bottom: 1rem;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 0.5rem;
 }
 
 .taskButton.edit {

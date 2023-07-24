@@ -20,7 +20,7 @@ export default {
 <template>
     <ul>
         <li v-for="item in items">
-            <span>{{ item }}</span>
+            <span class="green">{{ item }}</span>
             <div>
                 <button class="taskButton edit" v-on:click="editTask(items.indexOf(item));">Edit</button>
                 <button class="taskButton delete" v-on:click="deleteTask(items.indexOf(item));">Delete</button>
@@ -29,12 +29,15 @@ export default {
     </ul>
 </template>
 <style scoped>
+
+ul {
+    padding: 1rem;
+}
+
 li {
     list-style: none;
-    margin: 0.5rem 0;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin: 0.5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

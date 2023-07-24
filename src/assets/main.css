@@ -2,10 +2,34 @@
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
 
   font-weight: normal;
+  text-align: center;
+}
+
+header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+header div {
+  display: flex;
+  margin: auto;
+}
+
+button:disabled {
+  background-color: darkslategrey;
+}
+
+button {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transform: scale(1);
+  transition: all 0.4s;
+  border: none;
+  background-color: blue;
+  margin: 0 0.5rem;
 }
 
 .green {
@@ -15,18 +39,22 @@
 }
 
 @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+  
+  /* Si pones el ratón encima de un botón que no esté deshabilitado se engranda */
+  button:hover:not(:disabled) {
+    transform: scale(1.1);
+    cursor: pointer;
   }
+
+  button:hover:disabled {
+    cursor: not-allowed;
+  }
+
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-  }
-
   #app {
     display: grid;
-    padding: 0 2rem;
+    margin: auto;
   }
 }
