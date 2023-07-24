@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Title from './components/Title.vue'
-import Todo from './components/Todo.vue'
+import Todo from './components/Todo/Todo.vue'
 </script>
 
 <template>
